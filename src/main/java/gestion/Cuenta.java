@@ -43,5 +43,30 @@ public class Cuenta {
         return transacciones.size();
     }
 
+    //UPDATE
+    //Eliminar transaccion por indice
+    public boolean eliminarTransaccion(int indice) {
+        if (indice >= 0 && indice < transacciones.size()){
+            transacciones.remove(indice);
+            return true;
+        }
+        return false;
+    }
 
+    //obtener transaccion por indice
+    public Transaccion getTransaccion(int indice){
+        if (indice >= 0 && indice < transacciones.size()) {
+            return transacciones.get(indice);
+        }
+        return null;
+    }
+
+    //editar transaccion por indice
+    public boolean editarTransaccion(int indice, Transaccion nuevaTransaccion) {
+        if (indice >= 0 && indice < transacciones.size()) {
+            transacciones.set(indice, nuevaTransaccion);
+            return true;
+        }
+        return false;
+    }
 }
